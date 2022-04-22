@@ -1,0 +1,17 @@
+body{
+    background: #f1f1f1;
+}
+
+.conteudo{
+    margin: 0 auto;
+    width: 680px;
+    background-color: #FFF;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+@media(max-width: 600px){
+    .conteudo{
+        width: 300px;
+    }
+}
