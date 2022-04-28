@@ -13,8 +13,13 @@ btnNovoItem.addEventListener('click', (e) => {
     }else{
         return;
     }
+})
 
-
+novoItem.addEventListener('keypress', (e) => {
+    if (e.keyCode == 13 && novoItem.value != '') {
+        inserirItem({ nome:novoItem.value, id: gerarId() })
+        novoItem.value = '';
+    }
 })
 
 

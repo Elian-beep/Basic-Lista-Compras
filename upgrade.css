@@ -21,6 +21,13 @@
     align-items: center;
     justify-content: center;
     font-weight: 800;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btnNovoItem:active{
+    margin-top: +0.5em;
+    background: #00bfff5e;
 }
 
 .inputNovoitem{
