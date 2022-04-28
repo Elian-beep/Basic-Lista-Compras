@@ -60,7 +60,7 @@ function inserirItem(item, novoItem = true) {//Se não houver um novo item, a va
 //------------------------------FUNÇÃO PARA CRIAR AS TAGS DO NOVO ITEM
 function criarItemLista(item) {
     let li = document.createElement('li'); //Cria uma tag li em uma variavel
-    let btnHtml = '<button class="btnRemove" onClick="deletarItem(' + item.id + ')">X</button>'; //Btn de deletar do item especifico
+    let btnHtml = '<div class="areaBtnRemove"><button class="btnRemove" onClick="deletarItem(' + item.id + ')"><img class="icons-styled trash" src="assets/lixeira-de-reciclagem.png" alt=""></button></div>'; //Btn de deletar do item especifico
     let itemHtml = '<p>'+item.nome+'</p>';
     li.innerHTML = itemHtml + btnHtml;
     li.style.marginBottom = '15px';
