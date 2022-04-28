@@ -1,0 +1,45 @@
+.title{
+    font-size: 30pt;
+    text-align: center;
+    margin-top: -0.1em;
+    margin-bottom: 1em;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnNovoItem{
+    background: none;
+    border: none;
+    background: #42b8df5e;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.inputNovoitem{
+    border: none;
+    border-bottom: 1px solid #42b8df5e;
+    width: 60%;
+    outline: none;
+    transition: 0.5s;
+    height: 1.5em;
+}
+
+.inputNovoitem:focus{
+    height: 2.5em;
+    width: 80%;
+}
+
+
+@media (max-width: 600px) {
+    .title{
+        font-size: 20pt;
+    }
+}

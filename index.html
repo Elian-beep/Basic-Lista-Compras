@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upgrade.css">
 
     <title>Lista de Compras</title>
 </head>
-<body>
-    
-    <div class="conteudo">
-        <div>
-            <input type="text" id="novoItem">
-            <button id="btnNovoItem">Adicionar</button>
-        </div>
 
+<body>
+
+    <div class="conteudo">
+        <h1 class="title">Minha Lista de Compras<hr></h1>
+        <div class="topo">
+            <input class="inputNovoitem" type="text" id="novoItem" placeholder="Adicionar novo item">
+            <button class="btnNovoItem" id="btnNovoItem">+</button>
+        </div>
+    </div>
+
+    <div class="items">
         <ul id="items">
         </ul>
     </div>
@@ -24,4 +30,5 @@
     <script src="list.js"></script>
 
 </body>
+
 </html>
