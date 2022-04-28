@@ -1,0 +1,36 @@
+.items{
+    margin: 2em auto 0 auto;
+    width: 680px;
+    border-radius: 8px;
+    padding: 25px;
+    background: #fff;
+}
+
+#items{
+    margin: 0;
+    padding: 0;
+}
+
+#items li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    border-bottom: 1px solid;
+
+}
+
+#items .btnRemove{
+    height: 2em;
+    width: 2em;
+    border: none;
+    background: none;
+    font-size: 11pt;
+}
+
+@media(max-width: 600px){
+    .items{
+        width: 300px;
+    }
+}

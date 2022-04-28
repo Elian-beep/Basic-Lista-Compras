@@ -36,11 +36,11 @@
     width: 60%;
     outline: none;
     transition: 0.5s;
-    height: 1.5em;
+    height: 2.5em;
+    background: none;
 }
 
 .inputNovoitem:focus{
-    height: 2.5em;
     width: 80%;
 }
 
