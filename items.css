@@ -29,19 +29,20 @@
 #items{
     margin: 0;
     padding: 1em;
-    border-radius: 20px;
+    border-radius: 20px 0;
     background: #fff;
+    list-style: none;
 }
 
-#items li{
-    list-style: none;
+#items #liItem{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     margin-bottom: 0;
-
     border-bottom: 1px solid;
+
+    transition: 0.4s;
 }
 
 .inputBoxCheck{

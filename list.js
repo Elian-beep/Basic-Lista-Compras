@@ -3,13 +3,15 @@ let lista = [];
 let novoItem = document.querySelector('#novoItem');
 let btnNovoItem = document.querySelector('#btnNovoItem');
 let items = document.querySelector('#items');
-let boxCompleted = document.querySelector("#boxCompleted");
+
+let boxCompleted = document.getElementById("#boxCompleted");
+let areaBoxCompleted = document.querySelector("#areaBoxCompleted");
 
 recuperarLista(); //Verificando se há dados salvos no storage
 
 btnNovoItem.addEventListener('click', (e) => {
     if (novoItem.value != '') {
-        inserirItem({ nome: novoItem.value, id: gerarId() }); //Insere um objeto na função
+        inserirItem({ nome: novoItem.value, isChecked: false, id: gerarId() }); //Insere um objeto na função
         novoItem.value = '';
     }else{
         return;
@@ -18,7 +20,7 @@ btnNovoItem.addEventListener('click', (e) => {
 
 novoItem.addEventListener('keypress', (e) => {
     if (e.keyCode == 13 && novoItem.value != '') {
-        inserirItem({ nome:novoItem.value, id: gerarId() })
+        inserirItem({ nome:novoItem.value, isChecked: false, id: gerarId() })
         novoItem.value = '';
     }
 })
@@ -61,10 +63,10 @@ function inserirItem(item, novoItem = true) {//Se não houver um novo item, a va
 //------------------------------FUNÇÃO PARA CRIAR AS TAGS DO NOVO ITEM
 function criarItemLista(item) {
     let li = document.createElement('li'); //Cria uma tag li em uma variavel
-    let boxCheck = '<input class="inputBoxCheck" id="boxCompleted" type="checkbox" />'
+    let boxCheck = '<input class="inputBoxCheck" id="boxCompleted" onClick="marcarItem('+ item.id +')" type="checkbox" />'
     let btnHtml = '<div class="areaBtnRemove"><button class="btnRemove" onClick="deletarItem(' + item.id + ')"><img class="icons-styled trash" src="assets/lixeira-de-reciclagem.png" alt=""></button></div>'; //Btn de deletar do item especifico
     let itemHtml = '<p>'+item.nome+'</p>';
-    li.innerHTML = boxCheck + itemHtml + btnHtml;
+    li.innerHTML = '<div id="liItem">'+boxCheck + itemHtml + btnHtml+ '</div>';
     li.style.marginBottom = '15px';
     li.id = item.id;
 
@@ -90,8 +92,18 @@ function deletarItem(id) {
 
 
 //------------------------------FUNÇÃO PARA MARCAR E DESMARCAR ITEM
-function marcarItem(){
-    if(boxCompleted.checked){
-        console.log("clicado");
+function marcarItem(id){
+    let indice = lista.findIndex(i => i.id == id);
+    let itemEncontrado = lista[indice];
+
+    if(!itemEncontrado.isChecked){
+        document.getElementById(''+id+'').style.fontSize = "10pt";
+        document.getElementById(''+id+'').style.color = "#f1f1f1";
+        itemEncontrado.isChecked = true;
+    }else if(itemEncontrado){
+        document.getElementById(''+id+'').style.fontSize = "";
+        document.getElementById(''+id+'').style.color = "";
+        itemEncontrado.isChecked = false;
     }
+
 }
