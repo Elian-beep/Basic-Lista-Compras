@@ -3,6 +3,7 @@ let lista = [];
 let novoItem = document.querySelector('#novoItem');
 let btnNovoItem = document.querySelector('#btnNovoItem');
 let items = document.querySelector('#items');
+let boxCompleted = document.querySelector("#boxCompleted");
 
 recuperarLista(); //Verificando se há dados salvos no storage
 
@@ -60,9 +61,10 @@ function inserirItem(item, novoItem = true) {//Se não houver um novo item, a va
 //------------------------------FUNÇÃO PARA CRIAR AS TAGS DO NOVO ITEM
 function criarItemLista(item) {
     let li = document.createElement('li'); //Cria uma tag li em uma variavel
+    let boxCheck = '<input class="inputBoxCheck" id="boxCompleted" type="checkbox" />'
     let btnHtml = '<div class="areaBtnRemove"><button class="btnRemove" onClick="deletarItem(' + item.id + ')"><img class="icons-styled trash" src="assets/lixeira-de-reciclagem.png" alt=""></button></div>'; //Btn de deletar do item especifico
     let itemHtml = '<p>'+item.nome+'</p>';
-    li.innerHTML = itemHtml + btnHtml;
+    li.innerHTML = boxCheck + itemHtml + btnHtml;
     li.style.marginBottom = '15px';
     li.id = item.id;
 
@@ -83,4 +85,13 @@ function deletarItem(id) {
     lista.splice(indice, 1); //Removendo APENAS o elemento com o indice encontrado
     localStorage.setItem('listaDeCompras', JSON.stringify(lista)); // Atualiza a lista no storage
     document.getElementById('' + id + '').remove(); //Remove o elemento html do item
+}
+
+
+
+//------------------------------FUNÇÃO PARA MARCAR E DESMARCAR ITEM
+function marcarItem(){
+    if(boxCompleted.checked){
+        console.log("clicado");
+    }
 }
