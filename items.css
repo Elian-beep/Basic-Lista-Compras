@@ -5,11 +5,14 @@
     overflow-y: scroll;
 
     margin-bottom: 1em;
+
+    display: flex;
+    justify-content: center;
 }
 
 .items{
     margin: 0;
-    width: 680px;
+    width: 90%;
     height: 500px;
     border-radius: 8px;
 }
@@ -59,7 +62,7 @@
 
 @media(max-width: 600px){
     .items{
-        width: 300px;
+        width: 90%;
         height: 450px;
     }
 }
