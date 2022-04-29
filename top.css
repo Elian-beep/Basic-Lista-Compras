@@ -33,7 +33,7 @@
 .inputNovoitem{
     border: none;
     border-bottom: 2.5px solid #42b8df5e;
-    width: 60%;
+    width: 50%;
     outline: none;
     transition: 0.5s;
     height: 2.5em;
@@ -41,7 +41,7 @@
 }
 
 .inputNovoitem:focus{
-    width: 80%;
+    width: 85%;
 }
 
 
