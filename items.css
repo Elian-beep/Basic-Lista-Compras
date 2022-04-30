@@ -32,6 +32,8 @@
     border-radius: 20px 0;
     background: #fff;
     list-style: none;
+
+    box-shadow: 0px 10px 25px -15px #000; /*O 4º valor é um "spreadding" */
 }
 
 #items #liItem{
