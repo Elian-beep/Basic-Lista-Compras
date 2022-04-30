@@ -10,6 +10,29 @@
     justify-content: space-between;
 }
 
+.conteudo label{
+    font-size: 11pt;
+}
+
+.inputNovoitem{
+    border: none;
+    border-bottom: 2.5px solid #42b8df5e;
+    width: 50%;
+    outline: none;
+    transition: 0.5s;
+    height: 1.5em;
+    background: none;
+}
+
+.inputNovoitem:focus{
+    width: 80%;
+    height: 2.5em;
+}
+
+/* .inputNovoitem:focus::-webkit-input-placeholder{
+    color: black;
+} */
+
 .btnNovoItem{
     background: none;
     border: none;
@@ -29,21 +52,6 @@
     margin-top: +0.5em;
     background: #00bfff5e;
 }
-
-.inputNovoitem{
-    border: none;
-    border-bottom: 2.5px solid #42b8df5e;
-    width: 50%;
-    outline: none;
-    transition: 0.5s;
-    height: 2.5em;
-    background: none;
-}
-
-.inputNovoitem:focus{
-    width: 85%;
-}
-
 
 @media (max-width: 600px) {
     .title{
