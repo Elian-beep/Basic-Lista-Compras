@@ -3,6 +3,7 @@ let lista = [];
 let novoItem = document.querySelector('#novoItem');
 let btnNovoItem = document.querySelector('#btnNovoItem');
 let items = document.querySelector('#items');
+let qtdItem = document.querySelector("#qtdItem");
 
 let boxCompleted = document.getElementById("#boxCompleted");
 let areaBoxCompleted = document.querySelector("#areaBoxCompleted");
@@ -11,8 +12,9 @@ recuperarLista(); //Verificando se há dados salvos no storage
 
 btnNovoItem.addEventListener('click', (e) => {
     if (novoItem.value != '') {
-        inserirItem({ nome: novoItem.value, isChecked: false, id: gerarId() }); //Insere um objeto na função
+        inserirItem({ quantidade: qtdItem.value, nome: novoItem.value, isChecked: false, id: gerarId() }); //Insere um objeto na função
         novoItem.value = '';
+        qtdItem.value = '';
     }else{
         return;
     }
@@ -20,8 +22,9 @@ btnNovoItem.addEventListener('click', (e) => {
 
 novoItem.addEventListener('keypress', (e) => {
     if (e.keyCode == 13 && novoItem.value != '') {
-        inserirItem({ nome:novoItem.value, isChecked: false, id: gerarId() })
+        inserirItem({ quantidade: qtdItem.value, nome:novoItem.value, isChecked: false, id: gerarId() })
         novoItem.value = '';
+        qtdItem.value = '';
     }
 })
 
@@ -65,7 +68,7 @@ function criarItemLista(item) {
     let li = document.createElement('li'); //Cria uma tag li em uma variavel
     let boxCheck = '<input class="inputBoxCheck" id="boxCompleted" onClick="marcarItem('+ item.id +')" type="checkbox" />'
     let btnHtml = '<div class="areaBtnRemove"><button class="btnRemove" onClick="deletarItem(' + item.id + ')"><img class="icons-styled trash" src="assets/lixeira-de-reciclagem.png" alt=""></button></div>'; //Btn de deletar do item especifico
-    let itemHtml = '<p>'+item.nome+'</p>';
+    let itemHtml = '<p>'+item.quantidade+'x '+item.nome+'</p>';
     li.innerHTML = '<div id="liItem">'+boxCheck + itemHtml + btnHtml+ '</div>';
     li.style.marginBottom = '15px';
     li.id = item.id;
