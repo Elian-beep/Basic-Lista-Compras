@@ -8,10 +8,26 @@
 .topo{
     display: flex;
     justify-content: space-between;
+    margin-top: 1em;
 }
 
-.conteudo label{
-    font-size: 11pt;
+.conteudo .subtitle{
+    margin-bottom: 10em;
+}
+
+.qtdNovoItem{
+    width: 2em;
+    border: none;
+    border-bottom: 2.5px solid #42b8df5e;
+    outline: none;
+    transition: 0.5s;
+    height: 1.5em;
+    background: none;
+}
+
+.qtdNovoItem:focus{
+    width: 3em;
+    height: 2.5em;
 }
 
 .inputNovoitem{
@@ -25,7 +41,7 @@
 }
 
 .inputNovoitem:focus{
-    width: 80%;
+    width: 70%;
     height: 2.5em;
 }
 
